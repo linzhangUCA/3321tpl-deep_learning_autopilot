@@ -55,7 +55,7 @@ cv.startWindowThread()
 cam = Picamera2()
 cam.configure(
     cam.create_preview_configuration(
-        main={"format": 'RGB888', "size": (120, 160)},
+        main={"format": 'RGB888', "size": (176, 208)},
         controls={"FrameDurationLimits": (50000, 50000)},  # 20 FPS
     )
 )
@@ -125,7 +125,7 @@ try:
         action = [act_st, act_th]
         # print(f"action: {action}")
         if is_recording:
-            # img = cv.resize(frame, (120, 160))
+            # img = cv.resize(frame, (176, 208))
             cv.imwrite(image_dir + str(frame_counts) + '.jpg', frame)
             label = [str(frame_counts) + '.jpg'] + action
             with open(label_path, 'a+', newline='') as f:

@@ -17,10 +17,10 @@ from gpiozero import LED
 model_path = os.path.join(
     os.path.dirname(sys.path[0]),
     'models', 
-    'DonkeyNet-15epochs-0.001lr.pth'
+    'AutopilotNet-15epochs-0.001lr.pth'
 )
 to_tensor = transforms.ToTensor()
-model = convnets.DonkeyNet()
+model = convnets.AutopilotNet()
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.eval()
 # Load configs
@@ -51,7 +51,7 @@ cv.startWindowThread()
 cam = Picamera2()
 cam.configure(
     cam.create_preview_configuration(
-        main={"format": 'RGB888', "size": (120, 160)},
+        main={"format": 'RGB888', "size": (176, 208)},
         controls={"FrameDurationLimits": (50000, 50000)},  # 20 FPS
     )
 )

@@ -30,9 +30,8 @@ class DonkeyNet(nn.Module):
         return x
 
 
-### START CODING HERE
+### START CODING HERE ###
 class AutopilotNet(nn.Module):
-
     def __init__(self):
         super().__init__()
         self.conv1 = None
@@ -40,4 +39,5 @@ class AutopilotNet(nn.Module):
     def forward(self, x):  # 176x208x3 -> 2
         x = None
         return x
+### END CODING HERE ###
 

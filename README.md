@@ -8,7 +8,7 @@
 1. Clone this repository to Raspberry Pi (and rename it to dlr).
 ```bash
 cd ~
-git clone git@github.com:<team_name>/<repository_name> dlr
+git clone https://github.com/<team_name>/<repository_name> dlr
 ```
 2. Collect data
 ```bash

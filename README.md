@@ -46,4 +46,9 @@ python ~/dlr/scripts/autopilot.py
 - The autopilot model will be tested and showcased on the race track as shown below.
 ![race_track](111_raceway.png)
 
-- (100%) The autopilots are expected to drive the vehicles autonomously. Any human interference will take 5% off the total score. 
+- For the final demonstration, set and start the BearCart at the "Start/Finish Line".
+- Release the autopilot after the instructor's verbal cue.
+- Operators may follow and correct the robot if any unexpected situation (crash, stuck, off-track, etc.) happened. Be familiar with the `PAUSE` button.
+- The time cost to finish a lap and the number of human corrections/interferences will be recorded.
+- (100%) The autopilots are expected to drive the vehicles autonomously. Any human interference will take 5% off the total score.
+- Each team has 5 attempts. Each attempt should not last over 2 minutes.

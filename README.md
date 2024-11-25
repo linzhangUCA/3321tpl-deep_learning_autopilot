@@ -1,7 +1,7 @@
-# Final Project - Deep Learning Self-Driving
-
+# Final Project - Deep Learning Autopilot
 ## Objectives
 - Develop a deep learning autopilot model based on convolutional neural networks.
+- Use behaviroal cloning approach to train this autopilot.
 
 ## Usage
 1. Clone this repository to Raspberry Pi (and rename it to dlr).
@@ -28,7 +28,7 @@ python ~/dlr/scripts/train.py 2024-11-12-13-14
 ```
 6. Transfer model
 
-**Following example needs to log out from the server**.
+**Following example needs logging out from the server**.
 ```bash
 rsync -rv --partial --progress user@192.168.0.111:~/dlr/data/AutopilotNet-15epochs-0.001lr.pth ~/dlr/models
 ```
@@ -43,12 +43,11 @@ python ~/dlr/scripts/autopilot.py
 - Deploy and test the autopilot model.
 
 ## Rubric 
-- The autopilot model will be tested and showcased on the race track as shown below.
-![race_track](111_raceway.png)
-
+- **(100%) The deployed autopilot is expected to finish at least one lap of the track autonomously.** Any human correction/interference will cost 5% of the total score.
 - For the final demonstration, set and start the BearCart at the "Start/Finish Line".
 - Release the autopilot after the instructor's verbal cue.
 - Operators may follow and correct the robot if any unexpected situation (crash, stuck, off-track, etc.) happened. Be familiar with the `PAUSE` button.
 - The time cost to finish a lap and the number of human corrections/interferences will be recorded.
-- (100%) The autopilots are expected to drive the vehicles autonomously. Any human interference will take 5% off the total score.
 - Each team has 5 attempts. Each attempt should not last over 2 minutes.
+- The autopilot model will be tested and showcased on the track as shown below.
+![race_track](111_raceway.png)

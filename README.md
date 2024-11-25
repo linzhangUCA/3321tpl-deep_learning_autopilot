@@ -28,7 +28,7 @@ mamba activate bc
 python ~/dlr/scripts/train.py 2024-11-12-13-14
 ```
 6. Transfer model
-7. 
+
 **Following example needs to log out from the server**.
 ```bash
 rsync -rv --partial --progress user@192.168.0.111:~/dlr/data/AutopilotNet-15epochs-0.001lr.pth ~/dlr/models

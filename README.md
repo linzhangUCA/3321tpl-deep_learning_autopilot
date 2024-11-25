@@ -10,4 +10,7 @@
 - Deploy and test the autopilot model.
 
 ## Rubric 
+- The autopilot model will be tested and showcased on the race track as shown below.
 ![race_track](111_raceway.png)
+
+- (100%) The autopilots are expected to drive the vehicles autonomously. Any human interference will take 5% off the total score. 

@@ -2,7 +2,6 @@
 
 ## Objectives
 - Develop a deep learning autopilot model based on convolutional neural networks.
-- Test the autopilot on the designated track.
 
 ## Usage
 1. Clone this repository to Raspberry Pi (and rename it to dlr).

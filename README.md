@@ -24,6 +24,7 @@ ssh user@192.168.0.111
 ```
 5. Train model
 ```bash
+mamba activate bc
 python ~/dlr/scripts/train.py 2024-11-12-13-14
 ```
 6. Transfer model

@@ -24,7 +24,7 @@ git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<team_nam
 
 > [!NOTE]
 >
-> - You need to substitute `<team_name>` with your actual team team.
+> - You need to substitute `<team_name>` with your actual team name.
 > - The downloaded project repository will be saved as `~/dl_autopilot/`.
 
 3. Use `(width=180, height=200, color_channel=3)` as your autopilot's input image size.

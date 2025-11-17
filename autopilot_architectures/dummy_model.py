@@ -1,7 +1,7 @@
 import torch.nn as nn
 
 
-# class DummyPilot(nn.Module):
+# class DummyPilotNet(nn.Module):
 #     def __init__(self):
 #         super(DummyPilot, self).__init__()
 #         self.flatten = nn.Flatten()
@@ -22,5 +22,5 @@ import torch.nn as nn
 if __name__ == "__main__":
     from torchinfo import summary
 
-    # model = DummyPilot()  # Adjust num_classes as needed
+    # model = DummyPilotNet()  # Adjust num_classes as needed
     # summary(model, input_size=(1, 3, 180, 200))

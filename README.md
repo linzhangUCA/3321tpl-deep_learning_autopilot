@@ -64,36 +64,44 @@ model = DummyPilotNet().to(DEVICE)  # line 145
 
 ## Requirements
 
-- Design and develop the architecture of the deep learning autopilot.
+- (10%) Design and develop the architecture of the deep learning autopilot.
 Save all teammember's model files in [autopilot_architectures/](autopilot_architectures/) directory with distinguished and identifiable names.
 For example: [autopilot_architectures/dummy_model.py](autopilot_architectures/dummy_model.py)
 
 > [!CAUTION]
 >
-> - Each teammember needs to propose a unique model architecture (can't be the same as BearNet nor as anyone else's).
-> - No credits will be given to teammembers who failed to upload the model architecture.
+> - Each teammember needs to propose a unique model architecture (can't be the same as the BearNet nor as anyone else's).
+If a convolutional neural network is proposed, the designs of both convolution layers and fully connected layers have to be unique.
+> - No credits will be given to the teammembers who failed to upload the model architecture.
+> - Teammembers will share the physical robot and the server account.
+> - Sharing the training data is allowed. If a teammember collected all the training data, the member will be awarded with an extra 5% of the project's total points.
 
+- (10%) Upload the race proofed autopilot model to [models/](models/) directory with distinguished and identifiable names.
+
+> [!CAUTION]
+>
+> No credits will be given to the teammembers who failed to upload the model architecture.
+
+- (80%) Demonstrate a functional autopilot on the race day.
+
+> [!CAUTION]
+>
+> - Every teammember needs to demonstrate his/her own autopilot using the shared robot.
+> - Each teammember has **3 attempts** in total. Extra attempts may given based on the time and the actual conditions.
+> - The autopilot is expected to finish at least one lap of the track autonomously.
+> - Every collision, and human interference in one lap will lead the autopilot's owner losing 4% of total points.
+> - Teammembers can share the duties of security guard and on-track correction.
+>
 - (Optional) Feel free to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) and customize the [BearCar](https://github.com/UCAEngineeringPhysics/BearCar) repository. Submit [pull requestes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) if you've developed new features or corrected mistakes.
 
 > [!TIP]
-> Extra points will be rewarded to the person or teams who submitted the **accepted** PR.
+> Extra points will be rewarded to the person or teams who submitted **accepted** PRs.
   
-## Race Rules
+## Race Steps
 
-### Rules
-
-1. Set the robot behind the "Start/Finish" line with "Paused" status (yellow light on).
-2. Operator in the team needs to Please wait the judge's verbal order to start the autopilot (
-**(100%) The deployed autopilot is expected to finish at least one lap of the track autonomously.**
-
-- Any human correction/interference will **cost 5%** of the total score.
-- An extra
-- set and start the robot at the "Start/Finish Line".
-- Release the autopilot after the instructor's verbal cue.
-- Operators may follow and correct the robot if any unexpected situation (crash, stuck, off-track, etc.) happened. Be familiar with the `PAUSE` button.
-- The time cost to finish a lap and the number of human corrections/interferences will be recorded.
-- Each team has 5 attempts. Each attempt should not last over 2 minutes.
-- The autopilot model will be tested and showcased on the track as shown below.
--
+1. Set the robot behind the start/finish line under the "Paused" status (yellow light on).
+2. Operator (who has the gamepad) needs to wait the judge's verbal order to start the autopilot (purple light on).
+3. If human interference is needed, operator has to pause the robot and let the corrector reset the robot to where it was paused or follow the judge's order.
+4. Operator has to wait the robot crossed the finish line to disable the robot.
 
 ![race_track](race_track.jpg)

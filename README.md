@@ -1,48 +1,20 @@
 # Final Project - Deep Learning Autopilot
-## Objectives
-- Develop a deep learning autopilot model based on convolutional neural networks.
-- Use behaviroal cloning approach to train this autopilot.
 
-## Usage
-1. Clone this repository to Raspberry Pi (and rename it to dlr).
-```bash
-cd ~
-git clone https://github.com/<team_name>/<repository_name> dlr
-```
-2. Collect data
-```bash
-python ~/dlr/scripts/collect_data.py
-```
-3. Transfer data
-```bash
-rsync -rv --partial --progress ~/dlr/data/2024-11-12-13-14 user@192.168.0.111:~/dlr/data/
-```
-4. Log in to server
-```bash
-ssh user@192.168.0.111
-```
-5. Train model
-```bash
-mamba activate bc
-python ~/dlr/scripts/train.py 2024-11-12-13-14
-```
-6. Transfer model
+## Background
+The rapid evolution of autonomous vehicle technology represents a paradigm shift in modern transportation, promising to drastically reduce accidents caused by human error while optimizing traffic efficiency. 
+Unlike traditional control systems that rely on brittle, hand-crafted rules to define driving behavior, modern autopilot systems increasingly depend on deep learning to navigate the stochastic and high-dimensional nature of real-world environments. 
+By leveraging architectures such as Convolutional Neural Networks (CNNs) for end-to-end learning, vehicles can move beyond simple object detection to map raw sensory inputs directly to control outputs like steering and acceleration. 
+This project focuses on developing such a deep learning-based autopilot, aiming to implement a behavioral cloning approach that allows the model to learn and replicate safe driving trajectories from observational data.
 
-**Following example needs logging out from the server**.
-```bash
-rsync -rv --partial --progress user@192.168.0.111:~/dlr/data/AutopilotNet-15epochs-0.001lr.pth ~/dlr/models
-```
-7. Deploy autopilot
-```bash
-python ~/dlr/scripts/autopilot.py
-```
+## [BearCar](https://github.com/UCAEngineeringPhysics/BearCar) Setup
+
 
 ## Requirements
 - Design your autopilot model in [convnets.py](scripts/convnets.py). The model is suppose to take in color image with shape of `(176, 208, 3)` and output steering and throttle values with shape of `(1, 2)`. 
 - Collect data to train your autopilot.
 - Deploy and test the autopilot model.
 
-## Rubric 
+## Final Race Rubric 
 - **(100%) The deployed autopilot is expected to finish at least one lap of the track autonomously.** Any human correction/interference will cost 5% of the total score.
 - For the final demonstration, set and start the BearCart at the "Start/Finish Line".
 - Release the autopilot after the instructor's verbal cue.

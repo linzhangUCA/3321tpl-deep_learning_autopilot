@@ -13,9 +13,10 @@ This project focuses on developing such a deep learning-based autopilot, aiming 
 > - Two students will share one BearCar hardware.
 > - Sharing the training data is allowed.
 If a student's dataset get shared once, he/she will be awarded with an extra 5% of the project's total points.
-Which means, if the entire class (14) use the same dataset collected by student A, then student A will be awarded an extra ($5\% \times 13 = 65\%$) points for the contribution. 
+Which means, if the entire class (14) use the same dataset collected by student A, then student A will be awarded an extra ($5\% \times 13 = 65\%$) points for the contribution.
+> - Usage of the BearCar software are [documented](https://uca-rbeg.github.io/bearcar_docs/usage/). Please spend your time practice and get familiar.
 
-1. Set up [BearCar](https://uca-rbeg.github.io/bearcar_docs/) on Raspberry Pi (and optionally on server computer).
+1. [Set up](https://uca-rbeg.github.io/bearcar_docs/installation/setup_software/) [BearCar](https://github.com/UCA-RBEG/BearCar) on Raspberry Pi (and optionally on server computer).
 > [!TIP]
 > A computing server will be set up for your convenience with the ip address: `192.168.0.100`.  
 

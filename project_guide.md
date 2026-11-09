@@ -6,64 +6,60 @@ The rapid evolution of autonomous vehicle technology represents a paradigm shift
 Unlike traditional control systems that rely on brittle, hand-crafted rules to define driving behavior, modern autopilot systems increasingly depend on deep learning to navigate the stochastic and high-dimensional nature of real-world environments.
 By leveraging architectures such as Convolutional Neural Networks (CNNs) for end-to-end learning, vehicles can move beyond simple object detection to map raw sensory inputs directly to control outputs like steering and acceleration.
 
-This project focuses on developing such a deep learning-based autopilot, aiming to implement a behavioral cloning approach that allows the model to learn and replicate safe driving trajectories from observational data.
+This project focuses on developing a deep learning-based autopilot using behavioral cloning, enabling the model to learn and replicate safe driving trajectories from observational data.
 
 ## 2. Project Setup
 > [!IMPORTANT]
-> - Two students will share one BearCar hardware.
-> - Sharing the training data is allowed.
-If a student's dataset get shared once, he/she will be awarded with an extra 5% of the project's total points.
-Which means, if the entire class (14) use the same dataset collected by student A, then student A will be awarded an extra ($5\% \times 13 = 65\%$) points for the contribution.
+> - Two students will share one BearCar hardware setup.
+> - Sharing training datasets is encouraged. If a student's dataset is used by peers, the author receives an additional 5% bonus of the total project points per recipient. For example, if all 13 classmates use Student A's dataset, Student A earns a $5\% \times 13 = 65\%$ bonus point addition.
 > - Usage of the BearCar software are [documented](https://uca-rbeg.github.io/bearcar_docs/usage/). Please spend your time practice and get familiar.
 
-1. [Set up](https://uca-rbeg.github.io/bearcar_docs/installation/setup_software/) [BearCar](https://github.com/UCA-RBEG/BearCar) on Raspberry Pi (and optionally on server computer).
+1. [Set up](https://uca-rbeg.github.io/bearcar_docs/installation/setup_software/) [BearCar](https://github.com/UCA-RBEG/BearCar) on Raspberry Pi (and optionally on your local workstation or server).
 > [!TIP]
-> A computing server will be set up for your convenience with the ip address: `192.168.0.100`.  
+> A dedicated computing server is available for training at IP address `192.168.0.100`.  
 
-3. Download project repository on both Raspberry Pi and server computer.
+3. Download project repository on both the Raspberry Pi and the computing server.
 ```console
 cd ~
 git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<github_username>.git ~/dl_autopilot
 ```
 
-3. Link the autopilot architecture directory from BearCar repository to this repository.
+3. Link the architecture directory from the BearCar repository to your project repository.
 ```console
 ln -s ~/BearCar/scripts/components/custom_archs ~/dl_autopilot/custom_archs
 ```
 
 ## 3. Requirements
-1. (60%) Develop a unique autopilot architecture.
-    1. Use a standalone Python script and upload it to the [custom_archs/](./custom_archs/) directory for your autopilot architecture class.
+### 3.1. (60%) Architecture Development.
+    1. Write a standalone Python script defining your model architecture class and place it in the [custom_archs/](./custom_archs/) directory for your autopilot architecture class.
     Refer to the [bearnet.py](./custom_archs/bearnet.py) for an example.
-    2. Register your architecture (on both Raspberry Pi and server) in the [__init__.py](./custom_archs/__init__.py) by adding `"<model_file_name>": <model_class_name>` to the `arch_registry` dictionary.  
+    2. Register your model class on both the Raspberry Pi and the server by adding `"<model_file_name>": <model_class_name>` to the `arch_registry` dictionary in [__init__.py](./custom_archs/__init__.py)   
 
 > [!CAUTION]
-> - Each individual needs to propose a unique model architecture (can't be the same as the ones used by BearCar nor as anyone else's). Points may be taken out due to the high similarity to an existing architecture.
-> - Bear in mind that the model will be running on a Raspberry Pi without any hardware acceleration. Your model's inference speed is a big concern of this project. 
+> - Each student must propose a unique model architecture. Duplicate implementations or significant structural similarities to BearCar baselines or classmates' models will result in point deductions.
+> - Models run on an onboard Raspberry Pi without dedicated hardware acceleration. Compute efficiency and inference speed (FPS) are critical design metrics.
  
-2. (40%) Documentation.
-  - (15%) Share your training dataset by uploading it to this repository or sharing the link for accessing it.
-Declare the source (collected by someone or by yourself) of your dataset. 
-  - (15%) Upload the race proofed autopilot model to the [models/](./models/) directory.
-  - (10%) Document your autopilot's performance in [README](./README.md) with the following 3 metrics:
-    1. Average lap time in 10 laps.
-    2. Number of collisions/human intervene per lap in 10 laps.
-    3. Frame rate when autopilot is on duty.
+2. (40%) Documentation & Deliverables.
+  - (15%) Upload your training dataset to the repository or provide an accessible link. Clearly declare the dataset origin (self-collected vs. shared/adapted from another student). 
+  - (15%) Upload the final, demonstration-tested model file to the [models/](./models) directory.
+  - (10%) In [README](./README.md) document model performance evaluated over 10 consecutive laps using the following metrics:
+    1. Best lap time (pause the timer for human intervene).
+    2. Average number of collisions/human interventions per lap across 10 laps.
+    3. Operating speed (FPS) while autopilot is active.
 > [!CAUTION]
-> - An autopilot model will be trained using the uploaded dataset and the proposed architecture. Please make sure the dataset will lead to a successful training and a reasonable autopilot.
-> - Model will be tested using Dr. Zhang's hardware after the "race". If the model performed completely different from the demonstration, a re-race will be called using student's hardware operated by Dr. Zhang. Failed to "re-race" will cost a 50% loss of the total points and disqualification of all the bonus points.
-
+> - Autopilot model will be retrained using the submitted dataset and proposed architecture. Ensure the uploaded dataset reliably trains a functional autopilot model.
+> - Submitted model will be spot-tested on Dr. Zhang's hardware after the demonstration. If performance deviates significantly from your reported metrics, a supervised re-demo using student's hardware operated by Dr. Zhang will be required. Failing the re-demo will result in a 50% penalty on total project points and forfeiture of all bonus points.
 
 ## 4. Demonstration/Race
 > [!IMPORTANT]
-> - Everyone needs to demonstrate his/her autopilot on the track to redeem the architecture development credits (60%).
-> - Each teammember has **3 attempts** in total. Extra attempts may given based on the time and the actual conditions.
-> - Every collision, and human interference in one lap will lead the autopilot's owner losing 5% of total points.
-> - If a student's autopilot can Catch Dr. Zhang's autopilot within 5 laps in a voluntary race, 10% bonus will be given.
+> - Student must demonstrate the autopilot on the track to earn the 60% Architecture Development credit.
+> - Each student receives 3 official attempts. Additional attempts may be granted at the judge's discretion based on schedule and track conditions.
+> - Each collision or required human intervention during a lap results in a 5% deduction from total project points.
+> - Successfully catching Dr. Zhang's benchmark autopilot within 5 laps in a voluntary head-to-head race earns a 10% **bonus**.
 
 ### Demonstration Procedure
-1. Set the robot behind the start/finish line under the "Paused" status (yellow light on).
-2. Operator (who has the gamepad) needs to wait the judge's verbal order to start the autopilot (purple light will be turned on).
-3. If human intervene is needed, operator has to pause the robot before reset the robot to where it was paused or follow the judge's order.
-4. Operator has to wait the robot crossed the finish line to disable the robot.
+1. Position the vehicle behind the start/finish line in the Paused state (indicated by a yellow status LED).
+2. The operator (holding the gamepad) must wait for the judge's verbal command before engaging autonomous mode (indicated by a purple status LED).
+3. If human intervention is required, the operator must pause the vehicle before resetting it to the intervention location or following the judge's directives.
+4. The operator must wait until the vehicle fully crosses the finish line before stopping or disabling the autopilot mode.
 

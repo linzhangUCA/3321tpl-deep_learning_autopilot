@@ -9,6 +9,11 @@ By leveraging architectures such as Convolutional Neural Networks (CNNs) for end
 This project focuses on developing such a deep learning-based autopilot, aiming to implement a behavioral cloning approach that allows the model to learn and replicate safe driving trajectories from observational data.
 
 ## 2. Project Setup
+> [!IMPORTANT]
+> - Two students will share one BearCar hardware.
+> - Sharing the training data is allowed.
+If a student's dataset get shared once, he/she will be awarded with an extra 5% of the project's total points.
+Which means, if the entire class (14) use the same dataset collected by student A, then student A will be awarded an extra ($5\% \times 13 = 65\%$) points for the contribution. 
 
 1. Set up [BearCar](https://uca-rbeg.github.io/bearcar_docs/) on Raspberry Pi (and optionally on server computer).
 > [!TIP]
@@ -19,9 +24,6 @@ This project focuses on developing such a deep learning-based autopilot, aiming 
 cd ~
 git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<github_username>.git ~/dl_autopilot
 ```
-> [!TIP]
-> - You need to substitute `<github_username>` with your actual github user name.
-> - The downloaded project repository will be saved as `~/dl_autopilot/`.
 
 3. Link the autopilot architecture directory from BearCar repository to this repository.
 ```console
@@ -29,12 +31,6 @@ ln -s ~/BearCar/scripts/components/custom_archs ~/dl_autopilot/custom_archs
 ```
 
 ## 3. Requirements
-> [!IMPORTANT]
-> - Two students will share one BearCar hardware.
-> - Sharing the training data is allowed.
-If a student's dataset get shared once, he/she will be awarded with an extra 5% of the project's total points.
-Which means, if the entire class (14) use the same dataset collected by student A, then student A will be awarded an extra ($5\% \times 13 = 65\%$) points for the contribution. 
-
 1. (60%) Develop a unique autopilot architecture.
     1. Use a standalone Python script and upload it to the [custom_archs/](./custom_archs/) directory for your autopilot architecture class.
     Refer to the [bearnet.py](./custom_archs/bearnet.py) for an example.
@@ -57,8 +53,6 @@ Declare the source (collected by someone or by yourself) of your dataset.
 > - Model will be tested using Dr. Zhang's hardware after the "race". If the model performed completely different from the demonstration, a re-race will be called using student's hardware operated by Dr. Zhang. Failed to "re-race" will cost a 50% loss of the total points and disqualification of all the bonus points.
 
 
-
- 
 ## 4. Demonstration/Race
 > [!IMPORTANT]
 > - Everyone needs to demonstrate his/her autopilot on the track to redeem the architecture development credits (60%).
@@ -72,5 +66,3 @@ Declare the source (collected by someone or by yourself) of your dataset.
 3. If human intervene is needed, operator has to pause the robot before reset the robot to where it was paused or follow the judge's order.
 4. Operator has to wait the robot crossed the finish line to disable the robot.
 
-
-![race_track](race_track.jpg)

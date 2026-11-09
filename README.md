@@ -1,6 +1,6 @@
 # Final Project - Deep Learning Autopilot
 
 ## Autopilot Performance
-| Best Lap Time | # Human Intervene | Frame Rate |
+| Best Lap Time | # Ave. Human Intervene (per lap) | Frame Rate |
 |----------|----------|----------|
-|   ?s |    | ? FPS   |
+|   ?s |  ?  | ? FPS   |

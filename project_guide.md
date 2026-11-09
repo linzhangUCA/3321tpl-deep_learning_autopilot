@@ -35,18 +35,19 @@ ln -s ~/BearCar/scripts/components/custom_archs ~/dl_autopilot/custom_archs
 
 ## 3. Requirements
 ### 3.1. (60%) Architecture Development.
-    1. Write a standalone Python script defining your model architecture class and place it in the [custom_archs/](./custom_archs/) directory for your autopilot architecture class.
-    Refer to the [bearnet.py](./custom_archs/bearnet.py) for an example.
-    2. Register your model class on both the Raspberry Pi and the server by adding `"<model_file_name>": <model_class_name>` to the `arch_registry` dictionary in [__init__.py](./custom_archs/__init__.py)   
+1. Write a standalone Python script defining your model architecture class and place it in the [custom_archs/](./custom_archs/) directory for your autopilot architecture class.
+Refer to the [bearnet.py](./custom_archs/bearnet.py) for an example.
+2. Register your model class on both the Raspberry Pi and the server by adding `"<model_file_name>": <model_class_name>` to the `arch_registry` dictionary in [__init__.py](./custom_archs/__init__.py)   
 
 > [!CAUTION]
 > - Each student must propose a unique model architecture. Duplicate implementations or significant structural similarities to BearCar baselines or classmates' models will result in point deductions.
 > - Models run on an onboard Raspberry Pi without dedicated hardware acceleration. Compute efficiency and inference speed (FPS) are critical design metrics.
  
-2. (40%) Documentation & Deliverables.
+### 3.2. (40%) Documentation & Deliverables.
+  - (2%) Upload a portrait of your robot to this repository and display it in [README](README.md) with the resolution of 600 (W) x 800 (H). 
   - (15%) Upload your training dataset to the repository or provide an accessible link. Clearly declare the dataset origin (self-collected vs. shared/adapted from another student). 
   - (15%) Upload the final, demonstration-tested model file to the [models/](./models) directory.
-  - (10%) In [README](./README.md) document model performance evaluated over 10 consecutive laps using the following metrics:
+  - (8%) In [README](./README.md) document model performance evaluated over 10 consecutive laps using the following metrics:
     1. Best lap time (pause the timer for human intervene).
     2. Average number of collisions/human interventions per lap across 10 laps.
     3. Operating speed (FPS) while autopilot is active.

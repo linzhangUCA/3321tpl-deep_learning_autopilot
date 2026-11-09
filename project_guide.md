@@ -1,6 +1,6 @@
 # Final Project - Deep Learning Autopilot
 
-## Background
+## Overview
 
 The rapid evolution of autonomous vehicle technology represents a paradigm shift in modern transportation, promising to drastically reduce accidents caused by human error while optimizing traffic efficiency.
 Unlike traditional control systems that rely on brittle, hand-crafted rules to define driving behavior, modern autopilot systems increasingly depend on deep learning to navigate the stochastic and high-dimensional nature of real-world environments.
@@ -9,40 +9,27 @@ This project focuses on developing such a deep learning-based autopilot, aiming 
 
 ## Project Setup
 
-1. Please follow the guides in BearCar's [documentation](https://ucaengineeringphysics.github.io/bearcar_docs/) to download and set up [BearCar](https://github.com/UCAEngineeringPhysics/BearCar) on both Raspberry Pi and server computer.
-
-> [!TIP]
-> Start over project setup if necessary.
-> Back up important files, then `rm -rf ~/BearCar` will wipe the project out from either Raspberry Pi or server.
+1. Set up [BearCar](https://uca-rbeg.github.io/bearcar_docs/) on Raspberry Pi (and optionally on server computer).
 
 2. Download project repository on both Raspberry Pi and server computer.
 
 ```console
 cd ~
-git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<team_name>.git ~/dl_autopilot
+git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<github_username>.git ~/dl_autopilot
 ```
-
-> [!NOTE]
->
-> - You need to substitute `<team_name>` with your actual team name.
-> - The downloaded project repository will be saved as `~/dl_autopilot/`.
-
-3. Use `(width=180, height=200, color_channel=3)` as your autopilot's input image size.
-This requires a little modification of the **BearCar** scripts on the **Raspberry Pi**.
-
-- Modify image resolution on line 37 in [teleop.py](https://github.com/UCAEngineeringPhysics/BearCar/blob/scripts/teleop.py).
-- Modify image resolution on line 43 in [autopilot.py](https://github.com/UCAEngineeringPhysics/BearCar/blob/scripts/autopilot.py).
-
-4. Modify model source to use models develop by your teammembers.
-This requires modification of the **BearCar**'s scripts on both **Raspberry Pi** and **server**.
-
 - Link the autopilot architecture directory from this project repository to BearCar repository.
 
 ```console
-ln -s ~/dl_autopilot/autopilot_architectures ~/BearCar/scripts/autopilot_architectures
+ln -s ~/BearCar/scripts/components/custom_archs ~/dl_autopilot/custom_archs
 ```
 
-- Modify line 11 and line 23 in [autopilot.py](https://github.com/UCAEngineeringPhysics/BearCar/blob/scripts/autopilot.py) to import and deploy desired model, for example:
+> [!TIP]
+> - You need to substitute `<github_username>` with your actual github user name.
+> - The downloaded project repository will be saved as `~/dl_autopilot/`.
+
+3. Modify model source to use models develop by your teammembers.
+This requires modification of the **BearCar**'s scripts on both **Raspberry Pi** and **server**.
+
 
 ```python
 # ...

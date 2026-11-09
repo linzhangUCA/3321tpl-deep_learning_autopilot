@@ -14,7 +14,8 @@ This project focuses on developing a deep learning-based autopilot using behavio
 > - Sharing training datasets is encouraged. If a student's dataset is used by peers, the author receives an additional 5% bonus of the total project points per recipient. For example, if all 13 classmates use Student A's dataset, Student A earns a $5\% \times 13 = 65\%$ bonus point addition.
 > - Usage of the BearCar software are [documented](https://uca-rbeg.github.io/bearcar_docs/usage/). Please spend your time practice and get familiar.
 > - It is students' responsibility to maintian the hardware. Mostly, keep the batteries charged for BearCars, gamepads and the headsets.
-> [!WARNING]
+
+> [!CAUTION]
 > Please please please **DISCONNECT** the BearCars' batteries before leave! 
 
 1. [Set up](https://uca-rbeg.github.io/bearcar_docs/installation/setup_software/) [BearCar](https://github.com/UCA-RBEG/BearCar) on Raspberry Pi (and optionally on your local workstation or server).

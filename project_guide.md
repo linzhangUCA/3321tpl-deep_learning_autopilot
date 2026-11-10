@@ -28,7 +28,8 @@ cd ~
 git clone git@github.com:UCAEngineeringPhysics/deep-learning-autopilot-<github_username>.git ~/dl_autopilot
 ```
 
-3. Link the architecture directory from the BearCar repository to your project repository.
+3. (Optional) Link the architecture directory from the BearCar repository to your project repository.
+So that you don't need to manually copy the developed architecture script to the project repository.
 ```console
 ln -s ~/BearCar/scripts/components/custom_archs ~/dl_autopilot/custom_archs
 ```
